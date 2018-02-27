@@ -1,4 +1,3 @@
-%% @author User
 %% @doc @todo Add description to 'hello_world'.
 
 -module(hello_world).
