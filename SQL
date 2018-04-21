@@ -1,3 +1,13 @@
+/*-----------------SQL Server (2017)-----------------*/
+Download SQL Server (Developer option)
+https://www.microsoft.com/en-us/sql-server/sql-server-downloads-free-trial
+
+Download SQL Server Management Studio (SSMS)
+https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017
+
+Create Database > New Query
+/*---------------------------------------------------*/
+
 //180417
 
 //Unrepeat data form 1 column 
