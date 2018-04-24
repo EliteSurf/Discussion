@@ -60,7 +60,7 @@ CREATE TABLE Students
 MatricsNo nvarchar(6) not null,
 StudentName nvarchar(50) not null,
 Gender char not null,
-PhoneNo nvarchar(20) UNIQUE DEFAULT '-',
+PhoneNo nvarchar(20) DEFAULT '-',
 Course nvarchar(30) not null,
 Inasis nvarchar(30) not null DEFAULT '-',
 Origin nvarchar(30) DEFAULT 'UNKNOWN',
@@ -237,43 +237,5 @@ VALUES ('245278', 'STQM2103')
 
 /*---------------------------------------------- ----------------------------------------------*/
 /*--------Assignment 3--------*/
-/* Add One(1) Table*/
-create table Staff
-(
-StaffID int not null,
-Name varchar(50),
-?? varchar(30),
-constraint PK_Staff primary key (StaffID)
-)
 
-/*Alter One(1) Table*/
-alter table Staff
-add Gender varchar(6)
-
-/*Update One(1) Column*/
-
-
-/*Two(2) Simple Queries*/
-select FirstName, LastName, City from Customer where City = 'Mexico'
-select OrderId, UnitPrice from OrderItem where UnitPrice > 15
-
-/*One(1) Order by*/
-select FirstName, LastName, City, Country from Customer order by FirstName, LastName
-
-/*One(1) Distinct*/
-select distinct Country from Customer
-
-/*Two(2) Aggregate Function*/
-select sum(quantity) from OrderItem
-select avg(UnitPrice) from OrderItem
-
-/*Three(3) Subqueries - combining 2 and 3 table*/
-select Id, Quantity from OrderItem where Quantity > (select avg(Quantity) from OrderItem)
-select Id, Quantity from OrderItem where (UnitPrice, Quantity) in (select UnitPrice, max(Quantity) from OrderItem group by UnitPrice)
-select Id, productName, supplierId, Package from Product where Id in (select Id from supplier where Id = 1)
-
-/*Three(3) Multi-table queries - combining 2 and 3 table*/
-select * from OrderItem join Orders on OrderItem.Id = Orders.Id
-select SupplierId, CompanyName, ContactName from Supplier join Product on Supplier.Id = Product.Id
-select * from Customer join OrderItem on Customer.Id = OrderItem.Id join Product on Product.Id = OrderItem.Id
 /*---------------------------------------------- ----------------------------------------------*/
